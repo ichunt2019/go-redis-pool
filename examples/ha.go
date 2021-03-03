@@ -14,8 +14,9 @@ func main() {
 			"192.168.1.235:6379",
 			"192.168.1.237:6379",
 		},
-		Password:"icDb29mLy2s",
-		ReadonlyPassword:"icDb29mLy2s",
+		Password:"xxxxx",
+		ReadonlyPassword:"xxxxxxx",
+		
 
 		// optional
 		AutoEjectHost:      true,
