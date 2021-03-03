@@ -11,6 +11,7 @@ func main() {
 	pool, err := pool.NewHA(&pool.HAConfig{
 		Master: "192.168.1.235:6379",
 		Slaves: []string{
+			"192.168.1.235:6379",
 			"192.168.1.237:6379",
 		},
 		Password:"icDb29mLy2s",
