@@ -866,10 +866,11 @@ func (p *Pool) IncrByFloat(key string, value float64) *redis.FloatCmd {
 	return conn.IncrByFloat(key, value)
 }
 
-func (p *Pool) HSet(key, field string, value interface{}) *redis.BoolCmd {
+func (p *Pool) HSet(key, field string, value interface{}) *redis.IntCmd {
 	conn, err := p.connFactory.getMasterConn(key)
 	if err != nil {
-		return newErrorBoolCmd(err)
+		//return newErrorBoolCmd(err)
+		return newErrorIntCmd(err)
 	}
 	return conn.HSet(key, field, value)
 }
@@ -946,10 +947,10 @@ func (p *Pool) HMGet(key string, fields ...string) *redis.SliceCmd {
 	return conn.HMGet(key, fields...)
 }
 
-func (p *Pool) HMSet(key string, values ...interface{}) *redis.IntCmd {
+func (p *Pool) HMSet(key string, values ...interface{}) *redis.BoolCmd {
 	conn, err := p.connFactory.getMasterConn(key)
 	if err != nil {
-		return newErrorIntCmd(err)
+		return newErrorBoolCmd(err)
 	}
 	return conn.HMSet(key, values...)
 }
