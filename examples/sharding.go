@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	pool "github.com/bitleak/go-redis-pool"
+	pool "github.com/ichunt2019/go-redis-pool"
 )
 
 func main() {
